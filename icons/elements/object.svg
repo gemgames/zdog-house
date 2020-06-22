@@ -1,0 +1,30 @@
+<svg id="objectIcon" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+  <rect
+    x="0"
+    y="0"
+    rx="8"
+    width="20"
+    height="20"
+    style="fill:white;stroke:black;"
+  />
+  <ellipse cx="10" cy="10" rx="6" ry="6" style="fill:#ea0;stroke:#ea0;" />
+  <ellipse cx="7.5" cy="11.5" rx="2" ry="2" style="fill:#0000;stroke:#636;stroke-width:1.5px;" />
+  <ellipse cx="13.5" cy="11.5" rx="2" ry="2" style="fill:#0000;stroke:#636;stroke-width:1.5px;" />
+  <path
+    d="M6 13 L14 13"
+    stroke="#EA0"
+    stroke-width="2.5"
+    fill="#0000"
+  />
+  <path
+    d="M4 12 L16.5 12"
+    stroke="#EA0"
+    stroke-width="2"
+    fill="#0000"
+  />
+  <path d="M 8.5 13 A 1 1 0 0 0 12 13 Z"
+    stroke="#FED"
+    stroke-width="1.5"
+    fill="#FED"
+  />
+</svg>
