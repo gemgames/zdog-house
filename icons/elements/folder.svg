@@ -1,0 +1,41 @@
+<svg id="folderIcon" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+  <rect
+    x="0"
+    y="0"
+    rx="8"
+    width="20"
+    height="20"
+    style="fill:white;stroke:black;"
+  />
+  <rect
+    x="3"
+    y="7"
+    rx="1"
+    width="13"
+    height="9"
+    style="fill:#FDB;stroke:#FDB;"
+  />
+  <rect
+    x="7.5"
+    y="5"
+    rx="2"
+    width="9"
+    height="9"
+    style="fill:#FDB;stroke:#FDB;"
+  />
+  <path
+    d="M12 8.5 L15 10.5 L13.5 14 L10.5 14 L9 10.5 Z"
+    stroke="#EA0"
+    stroke-width="1.5"
+    fill="#0000"
+  />
+  <ellipse cx="9" cy="10" rx="2.5" ry="2.5" style="fill:#c25;stroke:#c25;" />
+  <rect
+    x="5"
+    y="11"
+    rx="0vw"
+    width="3"
+    height="3"
+    style="fill:#e62;stroke:#e62;"
+  />
+</svg>
