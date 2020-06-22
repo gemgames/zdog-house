@@ -1,0 +1,13 @@
+<svg width="40" height="40"  xmlns="http://www.w3.org/2000/svg">
+  <rect
+    x="0"
+    y="0"
+    rx="15"
+    width="40"
+    height="40"
+    style="fill:white;stroke:black;"
+  />
+  <path d="M20 6 L32 14 L20 20 L8 14 Z" fill="red" />
+  <path d="M8 14 L20 20 L20 34 L8 28 Z" fill="green" />
+  <path d="M32 14 L20 20 L20 34 L32 28 Z" fill="blue" />
+</svg>
