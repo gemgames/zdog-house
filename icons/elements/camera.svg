@@ -1,0 +1,36 @@
+<svg id="cameraIcon" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+  <rect
+    x="0"
+    y="0"
+    rx="8"
+    width="20"
+    height="20"
+    style="fill:white;stroke:black;"
+  />
+  <rect
+    x="4"
+    y="7"
+    rx="1"
+    width="12"
+    height="8"
+    style="fill:#534;stroke:#999;stroke-width:1.2;"
+  />
+  <rect
+    x="3.5"
+    y="6"
+    rx="0"
+    width="13"
+    height="1"
+    style="fill:#999;"
+  />
+  <rect
+    x="13.5"
+    y="4"
+    rx="0"
+    width="2"
+    height="2"
+    style="fill:#999;"
+  />
+  <ellipse cx="11" cy="11.8" rx="3" ry="3" style="fill:#534;stroke:#999;" />
+  <ellipse cx="11" cy="11.8" rx="0.1" ry="0.1" style="fill:#534;stroke:#999;" />
+</svg>
