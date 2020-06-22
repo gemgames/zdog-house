@@ -1,0 +1,18 @@
+<svg id="2dsquareIcon" width="20" height="20"  xmlns="http://www.w3.org/2000/svg">
+  <rect
+    x="0"
+    y="0"
+    rx="8"
+    width="20"
+    height="20"
+    style="fill:white;stroke:black;"
+  />
+  <rect
+    x="4"
+    y="4"
+    rx="0vw"
+    width="12"
+    height="12"
+    style="fill:#534;stroke:black;"
+  />
+</svg>
