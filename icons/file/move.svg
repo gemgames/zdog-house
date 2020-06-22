@@ -1,0 +1,20 @@
+<svg id="moveIcon" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+  <rect
+    x="0"
+    y="0"
+    rx="8"
+    width="20"
+    height="20"
+    style="fill:white;stroke:black;"
+  />
+  <rect
+    x="4"
+    y="6"
+    rx="0vw"
+    width="10"
+    height="10"
+    style="fill:#e62;stroke:#534;"
+  />
+  <line x1="8.5" y1="12" x2="17" y2="12" stroke="#534"/>
+  <text x="15" y="14" font-weight="bold" fill="#534" font-family="arial" font-size="7">></text>
+</svg>
