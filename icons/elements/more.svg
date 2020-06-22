@@ -1,0 +1,13 @@
+<svg id="circleIcon" width="20" height="20"  xmlns="http://www.w3.org/2000/svg">
+  <rect
+    x="0"
+    y="0"
+    rx="4"
+    width="10"
+    height="20"
+    style="fill:white;stroke:black;"
+  />
+  <ellipse cx="5" cy="5" rx="2" ry="2" style="fill:#534;stroke:#FFF;" />
+  <ellipse cx="5" cy="10" rx="2" ry="2" style="fill:#534;stroke:#FFF;" />
+  <ellipse cx="5" cy="15" rx="2" ry="2" style="fill:#534;stroke:#FFF;" />
+</svg>
