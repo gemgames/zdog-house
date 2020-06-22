@@ -1,0 +1,13 @@
+<svg id="boxIcon" width="20" height="20"  xmlns="http://www.w3.org/2000/svg">
+  <rect
+    x="0"
+    y="0"
+    rx="8"
+    width="20"
+    height="20"
+    style="fill:white;stroke:black;"
+  />
+  <path d="M10 4 L16 7 L10 10 L4 7 Z" fill="#c25" />
+  <path d="M4 7 L10 10 L10 17 L4 14 Z" fill="#e62" />
+  <path d="M16 7 L10 10 L10 17 L16 14 Z" fill="#ea0" />
+</svg>
