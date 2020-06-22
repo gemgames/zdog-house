@@ -1,0 +1,18 @@
+<svg id="object2Icon" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+  <rect
+    x="0"
+    y="0"
+    rx="8"
+    width="20"
+    height="20"
+    style="fill:white;stroke:black;"
+  />
+  <path d="M 10 10 A 1 1 0 0 0 10 4 Z" fill="#C25"/>
+  <path d="M 10 10 A 1 1 0 0 0 14.242 5.758 Z" fill="#E62"/>
+  <path d="M 10 10 A 1 1 0 0 0 16 10 Z" fill="#EA0"/>
+  <path d="M 10 10 A 1 1 0 0 0 14.242 14.242 Z" fill="#0A2"/>
+  <path d="M 10 10 A 1 1 0 0 0 10 16 Z" fill="#37B"/>
+  <path d="M 10 10 A 1 1 0 0 0 5.758 14.242 Z" fill="#636"/>
+  <path d="M 10 10 A 1 1 0 0 0 4 10 Z" fill="#A6C"/>
+  <path d="M 10 10 A 1 1 0 0 0 5.758 5.758 Z" fill="#A54"/>
+</svg>
