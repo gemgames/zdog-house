@@ -1,0 +1,13 @@
+<svg id="cylinderIcon" width="20" height="20"  xmlns="http://www.w3.org/2000/svg">
+  <rect
+    x="0"
+    y="0"
+    rx="8"
+    width="20"
+    height="20"
+    style="fill:white;stroke:black;"
+  />
+  <ellipse cx="10" cy="14" rx="4" ry="3" style="fill:#c25;stroke:#c25;" />
+  <line x1="10" y1="6" x2="10" y2="14" style="stroke:#C25;stroke-width:9" />
+  <ellipse cx="10" cy="6" rx="4" ry="3" style="fill:#e62;stroke:#e62;" />
+</svg>
