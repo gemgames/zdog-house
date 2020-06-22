@@ -1,0 +1,21 @@
+<svg width="41" height="40" xmlns="http://www.w3.org/2000/svg">
+  <rect
+    x="0"
+    y="0"
+    rx="15"
+    width="40"
+    height="40"
+    style="fill:white;stroke:black;"
+  />
+  <rect
+    id="mouseIconH"
+    x="1.5"
+    y="1.5"
+    rx="15"
+    width="37"
+    height="37"
+    style="fill:white;stroke:gold;stroke-width:3;"
+  />
+  <polygon points="14,8 14,28 28,20" style="fill:black;" />
+  <line x1="19" y1="20" x2="23" y2="30" style="stroke:black;stroke-width:2" />
+</svg>
