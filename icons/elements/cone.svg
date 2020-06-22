@@ -1,0 +1,12 @@
+<svg id="coneIcon" width="20" height="20"  xmlns="http://www.w3.org/2000/svg">
+  <rect
+    x="0"
+    y="0"
+    rx="8"
+    width="20"
+    height="20"
+    style="fill:white;stroke:black;"
+  />
+  <path d="M7 12 L13 12 L10 6 Z" stroke="#636" stroke-width="3" fill="#636" />
+  <ellipse cx="10" cy="14" rx="5.25" ry="3" style="fill:#c25;stroke:#c25;" />
+</svg>
