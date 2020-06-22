@@ -1,0 +1,11 @@
+<svg id="2dellipseIcon" width="20" height="20"  xmlns="http://www.w3.org/2000/svg">
+  <rect
+    x="0"
+    y="0"
+    rx="8"
+    width="20"
+    height="20"
+    style="fill:white;stroke:black;"
+  />
+  <ellipse cx="10" cy="10" rx="6" ry="4" style="fill:#534;stroke:#534;" />
+</svg>
