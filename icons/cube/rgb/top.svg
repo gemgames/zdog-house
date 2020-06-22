@@ -1,0 +1,19 @@
+<svg id="cubeTopIcon" width="41" height="40"  xmlns="http://www.w3.org/2000/svg">
+  <rect
+    x="0"
+    y="0"
+    rx="15"
+    width="40"
+    height="40"
+    style="fill:white;stroke:black;"
+  />
+  <rect
+    x="6"
+    y="6"
+    rx="0vw"
+    width="28"
+    height="28"
+    style="fill:#C00;stroke:#C00;"
+  />
+  <text x="12" y="22" font-weight="bold" fill="white" font-family="arial" font-size="8">TOP</text>
+</svg>
