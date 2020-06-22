@@ -1,0 +1,11 @@
+<svg id="2DtextIcon" width="20" height="20"  xmlns="http://www.w3.org/2000/svg">
+  <rect
+    x="0"
+    y="0"
+    rx="8"
+    width="20"
+    height="20"
+    style="fill:white;stroke:black;"
+  />
+  <text x="2" y="14" font-weight="bold" fill="#534" font-family="arial" font-size="12">Aa</text>
+</svg>
