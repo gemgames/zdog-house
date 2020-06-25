@@ -340,50 +340,50 @@ var debug = function(p) {
 var subModes = function(p) {
   if (mode.move) {
     doc.redIcon.src = dimension.red
-      ? "icons/" + style + "/redH.svg"
-      : "icons/" + style + "/red.svg";
+      ? "/icons/" + style + "/redH.svg"
+      : "/icons/" + style + "/red.svg";
     doc.greenIcon.src = dimension.green
-      ? "icons/" + style + "/greenH.svg"
-      : "icons/" + style + "/green.svg";
+      ? "/icons/" + style + "/greenH.svg"
+      : "/icons/" + style + "/green.svg";
     doc.blueIcon.src = dimension.blue
-      ? "icons/" + style + "/blueH.svg"
-      : "icons/" + style + "/blue.svg";
+      ? "/icons/" + style + "/blueH.svg"
+      : "/icons/" + style + "/blue.svg";
   }
   if (mode.rotate) {
     doc.redIcon.src = dimension.red
-      ? "icons/" + style + "/redRH.svg"
-      : "icons/" + style + "/redR.svg";
+      ? "/icons/" + style + "/redRH.svg"
+      : "/icons/" + style + "/redR.svg";
     doc.greenIcon.src = dimension.green
-      ? "icons/" + style + "/greenRH.svg"
-      : "icons/" + style + "/greenR.svg";
+      ? "/icons/" + style + "/greenRH.svg"
+      : "/icons/" + style + "/greenR.svg";
     doc.blueIcon.src = dimension.blue
-      ? "icons/" + style + "/blueRH.svg"
-      : "icons/" + style + "/blueR.svg";
+      ? "/icons/" + style + "/blueRH.svg"
+      : "/icons/" + style + "/blueR.svg";
   }
   if (mode.size) {
     doc.redIcon.src = dimension.red
-      ? "icons/" + style + "/heightH.svg"
-      : "icons/" + style + "/height.svg";
+      ? "/icons/" + style + "/heightH.svg"
+      : "/icons/" + style + "/height.svg";
     doc.greenIcon.src = dimension.green
-      ? "icons/" + style + "/depthH.svg"
-      : "icons/" + style + "/depth.svg";
+      ? "/icons/" + style + "/depthH.svg"
+      : "/icons/" + style + "/depth.svg";
     doc.blueIcon.src = dimension.blue
-      ? "icons/" + style + "/widthH.svg"
-      : "icons/" + style + "/width.svg";
+      ? "/icons/" + style + "/widthH.svg"
+      : "/icons/" + style + "/width.svg";
   }
 };
 var clickMode = function(p) {
   mode = { size: false, move: false, rotate: false };
   mode[p] = true;
   doc.moveIcon.src = mode.move
-    ? "icons/" + style + "/moveH.svg"
-    : "icons/" + style + "/move.svg";
+    ? "/icons/" + style + "/moveH.svg"
+    : "/icons/" + style + "/move.svg";
   doc.rotateIcon.src = mode.rotate
-    ? "icons/" + style + "/rotateH.svg"
-    : "icons/" + style + "/rotate.svg";
+    ? "/icons/" + style + "/rotateH.svg"
+    : "/icons/" + style + "/rotate.svg";
   doc.sizeIcon.src = mode.size
-    ? "icons/" + style + "/sizeH.svg"
-    : "icons/" + style + "/size.svg";
+    ? "/icons/" + style + "/sizeH.svg"
+    : "/icons/" + style + "/size.svg";
   subModes();
 };
 var click3D = function(p) {
@@ -722,18 +722,18 @@ var loadElements = function() {
     Cc =
       elements[i].type === "camera"
         ? ""
-        : '<div class="moreDropdown"><img class="moreIcon" src="icons/elements/more.svg">' +
+        : '<div class="moreDropdown"><img class="moreIcon" src="/icons/elements/more.svg">' +
           '<img class="more-content" onclick="duplicateElement(' +
           i +
-          ')"src="icons/file/duplicate.svg"><img class="more-content" onclick="deleteElement(' +
+          ')"src="/icons/file/duplicate.svg"><img class="more-content" onclick="deleteElement(' +
           i +
-          ')" src="icons/file/delete.svg"></div>';
+          ')" src="/icons/file/delete.svg"></div>';
     Aa = Aa.concat(
       '<div class="elementName" ' +
         Bb +
         ' onclick="loadElementData(' +
         i +
-        ')"><img src="icons/elements/' +
+        ')"><img src="/icons/elements/' +
         elements[i].type +
         '.svg">' +
         elements[i].name +
@@ -1150,15 +1150,15 @@ new Zdog.Dragger({
       }
     }
     if (dimension.green) {
-      Aa = Math.sin(camera.rotate.y);
-      Bb = Math.cos(camera.rotate.x);
+      Aa = 0.5-(Math.cos(camera.rotate.y)/2);
+      Bb = 0.5-(Math.cos(camera.rotate.x)/2);
       Cc = Aa < 0.2 && Aa > -0.2 ? 1 : Aa;
       Dd = Bb < 0.2 && Bb > -0.2 ? 1 : Bb;
       if (mode.move) {
         eC.translate.z +=
-          (moveX - pastMoveX) / -Cc + (moveY - pastMoveY) / Dd;
+          (moveX - pastMoveX) * -Aa + (moveY - pastMoveY) * -Bb;
         eF.translate.z +=
-          (moveX - pastMoveX) / -Cc + (moveY - pastMoveY) / Dd;
+          (moveX - pastMoveX) * -Aa + (moveY - pastMoveY) * -Bb;
       }
       if (mode.rotate) {
         eC.rotate.z +=
@@ -1201,7 +1201,11 @@ new Zdog.Dragger({
     pastMoveY = moveY;
   }, //pointer.pageX and pointer.pageY
   onDragEnd: function() {
-    loadElementData(highlightedElement);
+    console.log("Rx: "+camera.rotate.y);
+    console.log("Ry: "+camera.rotate.x);
+    console.log("x : "+Cc);
+    console.log("y : "+Dd);
+    //loadElementData(highlightedElement);
   }
 });
 new Zdog.Dragger({
