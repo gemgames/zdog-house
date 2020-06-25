@@ -1150,8 +1150,8 @@ new Zdog.Dragger({
       }
     }
     if (dimension.green) {
-      Aa = 0.5-(Math.cos(camera.rotate.y)/2);
-      Bb = 0.5-(Math.cos(camera.rotate.x)/2);
+      Aa = Math.sin(camera.rotate.y);
+      Bb = Math.sin(camera.rotate.x);
       Cc = Aa < 0.2 && Aa > -0.2 ? 1 : Aa;
       Dd = Bb < 0.2 && Bb > -0.2 ? 1 : Bb;
       if (mode.move) {
@@ -1236,5 +1236,5 @@ function animate() {
 }
 // start animation
 animate();
-loadElementData(0);
+loadElementData(1);
 doc.cover.style.visibility = "hidden";
