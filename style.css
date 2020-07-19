@@ -148,6 +148,27 @@ textarea {
   overflow-x: hidden;
 }
 
+#export {
+  background: #0000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 101;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  visibility: hidden;
+}
+#export-div{
+  padding-top:20vh;
+  padding-bottom:20vh;
+  padding-left:20vw;
+  padding-right:20vw;
+  overflow-y: scroll;
+  border: 1px solid black;
+}
+
 #elements {
   border: 1px solid black;
   position: absolute;
@@ -189,6 +210,9 @@ textarea {
   padding: 0px 0px;
   font-size: 16px;
 }
+.element-name{
+  float:left;
+}
 #highlightedElement {
   border: 1px solid #EA0;
   border-left: 2px solid #EA0;
@@ -204,12 +228,18 @@ textarea {
   float: right;
 }
 .more-content {
+  position: relative;
   display: none;
-
   float: right;
 }
-.moreDropdown:hover .more-content {
+.elementName:hover .more-content {
   display: block;
+}
+.elementName:hover .moreIcon{
+  display: none;
+}
+div.elementName:hover span{
+  display: none;
 }
 #edcRed,
 #edcGreen,
