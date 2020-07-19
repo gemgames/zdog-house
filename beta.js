@@ -1,3 +1,5 @@
+console.log("%cLoading Script","font-weight: bold; text-align: center;");
+console.time("Script Loading Time");
 //variables
 var i, j, k;
 var Aa, Bb, Cc, Dd;
@@ -42,6 +44,7 @@ var cos = function(p) {
 var pos = function(p) {
   return p % TAU >= 0 ? 1 : -1;
 };
+var log = console.log;
 
 //get and Illustrations
 var temp = function() {};
@@ -333,7 +336,7 @@ var cube = new Zdog.Illustration({
 
 //functions
 var debug = function(p) {
-  doc.debug.innerHTML = p;
+  console.log(p);
 };
 
 //ui functions
@@ -391,7 +394,7 @@ var click3D = function(p) {
   dimension[p] = true;
   subModes();
 };
-var ectf = function(){
+var ectf = function() {
   eT = elements[highlightedElement].type;
   eC = elements[highlightedElement].camera;
   eF = elements[highlightedElement].finished;
@@ -399,13 +402,9 @@ var ectf = function(){
 
 //call functions above
 clickMode("move");
-click3D("green");
+click3D("red");
 
 //fonts
-var noto = new Zdog.Font({
-  src:
-    "https://cdn.glitch.com/ddcae6e8-a8ce-49f0-af72-87dbb1d6a609%2FNotoSans-Regular.ttf?v=1591379137765"
-});
 var lato = new Zdog.Font({
   src:
     "https://cdn.glitch.com/ddcae6e8-a8ce-49f0-af72-87dbb1d6a609%2FLato-Regular.ttf?v=1591372213037"
@@ -477,22 +476,32 @@ var fileData = {
   },
   groups: [
     {
-      name: "Camera",
-      path: elements,
+      type: "illo",
+      name: "",
+      camera: camera,
+      finished: finished
+    },
+    {
+      type: "folder",
+      name: "Group",
+      camera: new Zdog.Group({ addTo: camera }),
+      finished: new Zdog.Group({ addTo: finished })
     }
-  ],
+  ]
 };
 //elements
 var elements = [
   {
     type: "camera",
     name: "Camera",
+    group: "",
     translate: { x: 0, y: 0, z: 0 },
     rotate: { x: 0, y: 0, z: 0 }
   },
   {
     type: "ellipse",
     name: "Ellipse",
+    group: "Group",
     camera: new Zdog.Ellipse({
       addTo: camera,
       width: 1,
@@ -519,8 +528,9 @@ var elements = [
   {
     type: "rect",
     name: "Rectangle",
+    group: "Group",
     camera: new Zdog.Rect({
-      addTo: camera,
+      addTo: fileData.groups[1].camera,
       width: 1,
       height: 1,
       depth: 1,
@@ -531,7 +541,7 @@ var elements = [
       fill: true
     }),
     finished: new Zdog.Rect({
-      addTo: finished,
+      addTo: fileData.groups[1].finished,
       width: 1,
       height: 1,
       depth: 1,
@@ -714,33 +724,87 @@ var templateElements = {
     rotate: { x: 0, y: 0, z: 0 }
   }
 };
-var highlightedElement = 0;
+var highlightedElement = 1;
+//elements
 var loadElements = function() {
-  Aa = "";
-  for (i = 0; i < elements.length; i++) {
-    Bb = i === highlightedElement ? 'id="highlightedElement"' : "";
-    Cc =
-      elements[i].type === "camera"
-        ? ""
-        : '<div class="moreDropdown"><img class="moreIcon" src="/icons/elements/more.svg">' +
-          '<img class="more-content" onclick="duplicateElement(' +
-          i +
-          ')"src="/icons/file/duplicate.svg"><img class="more-content" onclick="deleteElement(' +
-          i +
-          ')" src="/icons/file/delete.svg"></div>';
+  Bb = 0 === highlightedElement ? 'id="highlightedElement"' : "";
+  Aa =
+    '<div class="elementName" ' +
+    Bb +
+    ' onclick="loadElementData(' +
+    0 +
+    ')"><img src="/icons/elements/camera.svg"><span class="element-name">Camera</span></div>' +
+    "</div>";
+
+  var renderFolder = function(n) {
+    Aa = Aa.concat(
+      '<div class="elementName"><img src="/icons/elements/' +
+        fileData.groups[n].type +
+        '.svg"><div class="moreDropdown"><span class="element-name">' +
+        fileData.groups[n].name +
+        '</span><img class="moreIcon" src="/icons/elements/more.svg">' +
+        '<img class="more-content" onclick="nameGroup(' +
+        n +
+        ')"src="/icons/file/name.svg"><img class="more-content" onclick="duplicateGroup(' +
+        n +
+        ')"src="/icons/file/duplicate.svg"><img class="more-content" onclick="deleteGroup(' +
+        n +
+        ')" src="/icons/file/delete.svg"></div></div>'
+    );
+  };
+  var renderElement = function(n) {
+    Dd = elements[n].group === "" ? "" : "> ";
+    Bb = n === highlightedElement ? 'id="highlightedElement"' : "";
     Aa = Aa.concat(
       '<div class="elementName" ' +
         Bb +
         ' onclick="loadElementData(' +
-        i +
-        ')"><img src="/icons/elements/' +
-        elements[i].type +
-        '.svg">' +
-        elements[i].name +
-        Cc +
-        "</div>"
+        n +
+        ')">' +
+        Dd +
+        '<img src="/icons/elements/' +
+        elements[n].type +
+        '.svg"><div class="moreDropdown"><span class="element-name">' +
+        elements[n].name +
+        '</span><img class="moreIcon" src="/icons/elements/more.svg">' +
+        '<img class="more-content" onclick="duplicateElement(' +
+        n +
+        ')"src="/icons/file/duplicate.svg"><img class="more-content" onclick="deleteElement(' +
+        n +
+        ')" src="/icons/file/delete.svg">' +
+        '<img class="more-content" onclick="moveElement(' +
+        n +
+        ')"src="/icons/file/move.svg">' +
+        "</div></div>"
     );
+  };
+
+  Cc = {};
+  for (i of fileData.groups) {
+    Cc[i.name] = [];
   }
+
+  for (i = 1; i < elements.length; i++) {
+    Cc[elements[i].group].push({
+      name: elements[i].name,
+      type: elements[i].type,
+      num: i
+    });
+  }
+
+  for (i = 0; i < fileData.groups.length; i++) {
+    if (fileData.groups[i].name === "") {
+    } else {
+      renderFolder(i);
+    }
+    for (j of Cc[fileData.groups[i].name]) {
+      if (j.num === 0) {
+        continue;
+      }
+      renderElement(j.num);
+    }
+  }
+
   doc.elementsP.innerHTML = Aa;
 };
 var elementSwitch = function(p) {
@@ -828,20 +892,19 @@ var addElement = function(p) {
   Aa.addTo = camera;
   elementSwitch(p);
   if (p === "folder" || p == "object") {
-    elements.splice(1, 0, {
+    fileData.groups.push({
       name: p,
       type: p,
-      root: elements[elements.length],
       camera: Aa,
-      finished: Bb,
-      data: []
+      finished: Bb
     });
   } else {
     elements.push({
       name: p,
       type: p,
       camera: Aa,
-      finished: Bb
+      finished: Bb,
+      group: ""
     });
   }
   highlightedElement = elements.length - 1;
@@ -860,27 +923,156 @@ var duplicateElement = function(p) {
     type: elements[p].type,
     name: elements[p].name,
     camera: Aa,
-    finished: Bb
+    finished: Bb,
+    group: elements[p].group
   });
   loadElements();
   loadElementData(p + 1);
 };
+var duplicateElementS = function(p) {
+  temp = function() {
+    Bb = elements[p].finished;
+    Bb.addTo = finished;
+  };
+  Aa = elements[p].camera;
+  Aa.addTo = camera;
+  elementSwitch(elements[p].type);
+  elements.push({
+    type: elements[p].type,
+    name: elements[p].name,
+    camera: Aa,
+    finished: Bb,
+    group: elements[p].group
+  });
+};
 var deleteElement = function(p) {
-  elements[p].camera.visible = false;
-  elements[p].finished.visible = false;
+  if (!confirm('Delete "' + elements[p].name + '"?')) {
+    return;
+  }
+  camera.removeChild(elements[p].camera);
+  finished.removeChild(elements[p].finished);
   elements.splice(p, 1);
   if (p === elements.length) {
     highlightedElement = p - 1;
   }
 };
-
+var deleteElementS = function(p) {
+  camera.removeChild(elements[p].camera);
+  finished.removeChild(elements[p].finished);
+  elements.splice(p, 1);
+};
+var moveElement = function(p) {
+  let group = prompt(
+    'The group to move element "' +
+      elements[p].name +
+      '" to: (leave blank for no group)',
+    ""
+  );
+  //find out which group is called "group"
+  for (i = 0; i < fileData.groups.length; i++) {
+    if (fileData.groups[i].name === group) {
+      group = fileData.groups[i];
+      break;
+    }
+  }
+  if (i === fileData.groups.length) {
+    alert("No such group detected! Perhaps a typo?");
+    return;
+  }
+  //add child
+  group.camera.addChild(elements[p].camera);
+  group.finished.addChild(elements[p].finished);
+  elements[p].group = group.name;
+  //end
+  loadElements();
+  loadElementData(p);
+};
+var moveElementS = function(p,group) {
+  //find out which group is called "group"
+  for (i = 0; i < fileData.groups.length; i++) {
+    if (fileData.groups[i].name === group) {
+      group = fileData.groups[i];
+      break;
+    }
+  }
+  if (i === fileData.groups.length) {
+    group = fileData.groups[0];
+  }
+  //add child
+  group.camera.addChild(elements[p].camera);
+  group.finished.addChild(elements[p].finished);
+  elements[p].group = group.name;
+};
+//groups
+var nameGroup = function(p) {
+  let name = prompt('Rename "' + fileData.groups[p].name + '" to:', ""),
+    i;
+  if(name===null){return}
+  else if(name===""){alert("The name cannot be blank, silly!");return;}
+  for (i = 0; i < elements.length; i++) {
+    if (elements[i].group === fileData.groups[p].name) {
+      elements[i].group = name;
+    }
+  }
+  fileData.groups[p].name = name;
+  //done!
+  loadElements();
+};
+var duplicateGroup = function(p) {
+  if (!confirm('Duplicate "' + fileData.groups[p].name + '" and everything in it?')) {
+    return;
+  }
+  Aa = { addTo: camera };
+  Aa = new Zdog.Group(Aa);
+  Bb = { addTo: finished };
+  Bb = new Zdog.Group(Bb);
+  fileData.groups.push({
+    name: fileData.groups[p].name + "2",
+    type: fileData.groups[p].type,
+    camera: Aa,
+    finished: Bb
+  });
+  //duplicate elements
+  Dd = elements.length;
+  log(Dd);
+  for (j = 0; j < Dd; j++) {
+    log("Testing element"+j);
+    if (elements[j].group === fileData.groups[p].name) {
+      log(elements[elements.length-1]);
+      duplicateElementS(j);
+      log(elements[elements.length-1]);
+      moveElementS(elements.length-1,fileData.groups[p].name+"2");
+    }
+  }
+  //done!
+  loadElements();
+};
+var deleteGroup = function(p) {
+  if (!confirm('Delete "' + fileData.groups[p].name + '" and everything in it?')) {
+    return;
+  }
+  Dd = elements.length;
+  for (j = 0; j < Dd; j++) {
+    log("Testing element"+j);
+    if (elements[j].group === fileData.groups[p].name) {
+      deleteElementS(j);
+      Dd--;
+      j--;
+    }
+  }
+  camera.removeChild(fileData.groups[p].camera);
+  finished.removeChild(fileData.groups[p].finished);
+  fileData.groups.splice(p,1);
+  //done!
+  loadElements();
+};
 loadElements();
 
 //elementData
 loadElementData = function(p) {
   highlightedElement = p;
   loadElements();
-  Aa = elements[p].type === "camera";
+  Aa = elements[p].type === "camera" ? true : false;
   var element = Aa ? elements[p] : elements[p].camera;
   document.getElementById("edcHeader").value =
     elements[highlightedElement].name;
@@ -916,7 +1108,6 @@ loadElementData = function(p) {
   for (i = 0; i < edb.length - 1; i++) {
     document.getElementById(edb[i]).style.display = "block";
     if (!edH[elements[highlightedElement].type].includes(i)) {
-      console.log(i + " " + edb[i]);
       if (edT[i] === "b") {
         document.getElementById(edc[i]).checked = edI.array[i];
       } else {
@@ -1123,7 +1314,9 @@ new Zdog.Dragger({
   },
   onDragMove: function(pointer, moveX, moveY) {
     ectf();
-    if(eT==="camera"){return;}
+    if (eT === "camera") {
+      return;
+    }
     if (dimension.red) {
       Aa = Math.cos(camera.rotate.x);
       Bb = Math.sin(camera.rotate.y) * Math.cos(camera.rotate.x);
@@ -1131,10 +1324,8 @@ new Zdog.Dragger({
       //Dd = Bb > 300 ? 0 : Bb;
       Dd = 0;
       if (mode.move) {
-        eC.translate.y +=
-          (moveY - pastMoveY) / Cc + (moveX - pastMoveX) * Dd;
-        eF.translate.y +=
-          (moveY - pastMoveY) / Cc + (moveX - pastMoveX) * Dd;
+        eC.translate.y += (moveY - pastMoveY) / Cc + (moveX - pastMoveX) * Dd;
+        eF.translate.y += (moveY - pastMoveY) / Cc + (moveX - pastMoveX) * Dd;
       }
       if (mode.rotate) {
         eC.rotate.x +=
@@ -1143,10 +1334,8 @@ new Zdog.Dragger({
           ((moveY - pastMoveY) / Cc + (moveX - pastMoveX) * Dd) / TAU;
       }
       if (mode.size) {
-        eC.scale.y -=
-          (moveY - pastMoveY) / Cc + ((moveX - pastMoveX) * Dd) / 2;
-        eF.scale.y -=
-          (moveY - pastMoveY) / Cc + ((moveX - pastMoveX) * Dd) / 2;
+        eC.scale.y -= (moveY - pastMoveY) / Cc + ((moveX - pastMoveX) * Dd) / 2;
+        eF.scale.y -= (moveY - pastMoveY) / Cc + ((moveX - pastMoveX) * Dd) / 2;
       }
     }
     if (dimension.green) {
@@ -1155,10 +1344,8 @@ new Zdog.Dragger({
       Cc = Aa < 0.2 && Aa > -0.2 ? 1 : Aa;
       Dd = Bb < 0.2 && Bb > -0.2 ? 1 : Bb;
       if (mode.move) {
-        eC.translate.z +=
-          (moveX - pastMoveX) * -Aa + (moveY - pastMoveY) * -Bb;
-        eF.translate.z +=
-          (moveX - pastMoveX) * -Aa + (moveY - pastMoveY) * -Bb;
+        eC.translate.z += (moveX - pastMoveX) * -Aa + (moveY - pastMoveY) * -Bb;
+        eF.translate.z += (moveX - pastMoveX) * -Aa + (moveY - pastMoveY) * -Bb;
       }
       if (mode.rotate) {
         eC.rotate.z +=
@@ -1167,10 +1354,8 @@ new Zdog.Dragger({
           ((moveX - pastMoveX) / -Cc + (moveY - pastMoveY) / Dd) / TAU;
       }
       if (mode.size) {
-        eC.scale.z +=
-          (moveX - pastMoveX) / -Cc + (moveY - pastMoveY) / Dd / 2;
-        eF.scale.z +=
-          (moveX - pastMoveX) / -Cc + (moveY - pastMoveY) / Dd / 2;
+        eC.scale.z += (moveX - pastMoveX) / -Cc + (moveY - pastMoveY) / Dd / 2;
+        eF.scale.z += (moveX - pastMoveX) / -Cc + (moveY - pastMoveY) / Dd / 2;
       }
     }
     if (dimension.blue) {
@@ -1179,10 +1364,8 @@ new Zdog.Dragger({
       Cc = Aa < 0.2 && Aa > -0.2 ? 1 : Aa;
       Dd = Bb > 300 ? 0 : Bb;
       if (mode.move) {
-        eC.translate.x +=
-          (moveX - pastMoveX) / Cc + (moveY - pastMoveY) * Dd;
-        eF.translate.x +=
-          (moveX - pastMoveX) / Cc + (moveY - pastMoveY) * Dd;
+        eC.translate.x += (moveX - pastMoveX) / Cc + (moveY - pastMoveY) * Dd;
+        eF.translate.x += (moveX - pastMoveX) / Cc + (moveY - pastMoveY) * Dd;
       }
       if (mode.rotate) {
         eC.rotate.y +=
@@ -1191,21 +1374,15 @@ new Zdog.Dragger({
           ((moveX - pastMoveX) / Cc + (moveY - pastMoveY) * Dd) / TAU;
       }
       if (mode.size) {
-        eC.scale.x +=
-          (moveX - pastMoveX) / Cc + ((moveY - pastMoveY) * Dd) / 2;
-        eF.scale.x +=
-          (moveX - pastMoveX) / Cc + ((moveY - pastMoveY) * Dd) / 2;
+        eC.scale.x += (moveX - pastMoveX) / Cc + ((moveY - pastMoveY) * Dd) / 2;
+        eF.scale.x += (moveX - pastMoveX) / Cc + ((moveY - pastMoveY) * Dd) / 2;
       }
     }
     pastMoveX = moveX;
     pastMoveY = moveY;
   }, //pointer.pageX and pointer.pageY
   onDragEnd: function() {
-    console.log("Rx: "+camera.rotate.y);
-    console.log("Ry: "+camera.rotate.x);
-    console.log("x : "+Cc);
-    console.log("y : "+Dd);
-    //loadElementData(highlightedElement);
+    loadElementData(highlightedElement);
   }
 });
 new Zdog.Dragger({
@@ -1236,5 +1413,10 @@ function animate() {
 }
 // start animation
 animate();
-loadElementData(1);
+loadElementData(0);
 doc.cover.style.visibility = "hidden";
+log("%cScript Loaded","font-weight: bold; text-align: center;");
+console.timeEnd("Script Loading Time");
+log("Made by %cGem Games","font-weight: bold; color: #3a67fb; text-align: center;");
+log("Hi! If you're seeing this, it means you're looking at the code/console. Please note this code isn't wrapped up with a bow, as I feel there is no purpose of doing so.");
+log("Github: %chttps://github.com/gemgames/zdoghouse","color: #3a67fb;")
