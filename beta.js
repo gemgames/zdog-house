@@ -1419,4 +1419,3 @@ log("%cScript Loaded","font-weight: bold; text-align: center;");
 console.timeEnd("Script Loading Time");
 log("Made by %cGem Games","font-weight: bold; color: #3a67fb; text-align: center;");
 log("Hi! If you're seeing this, it means you're looking at the code/console. Please note this code isn't wrapped up with a bow, as I feel there is no purpose of doing so.");
-log("Github: %chttps://github.com/gemgames/zdoghouse","color: #3a67fb;")
