@@ -1,0 +1,19 @@
+<svg id="nameIcon" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+  <rect
+    x="0"
+    y="0"
+    rx="8"
+    width="20"
+    height="20"
+    style="fill:white;stroke:black;"
+  />
+  <rect
+    x="4"
+    y="4"
+    rx="0vw"
+    width="12"
+    height="12"
+    style="fill:#e62;stroke:#534;"
+  />
+  <text x="4.5" y="13" font-weight="bold" fill="#534" font-family="arial" font-size="8.5">Aa</text>
+</svg>
