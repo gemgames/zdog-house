@@ -23,48 +23,102 @@
         <div class="boxHeader">
           Export into JS
         </div>
-        <div id="exB-min" class="lr">
+        <div class="lr">
+          <div class="left">
+            Just JS
+          </div>
+          <div class="right">
+            <input id="ex-jjs" type="checkbox" />
+          </div>
+        </div>
+        <div class="lr">
           <div class="left">
             Minify
           </div>
           <div class="right">
-            <input id="exC-min" type="checkbox" />
+            <input id="ex-min" type="checkbox" />
           </div>
         </div>
-        <div id="exB-css" class="lr">
+        <div class="lr">
           <div class="left">
             Css Selector ID of the canvas
           </div>
           <div class="right">
-            <input id="exC-css" type="text" />
+            <input id="ex-css" type="text" value="zdog-canvas"/>
           </div>
         </div>
-        <div id="exB-dr" class="lr">
+        <div class="lr">
+          <div class="left">
+            Width of the canvas
+          </div>
+          <div class="right">
+            <input id="ex-wh" type="number" value="240"/>
+          </div>
+        </div>
+        <div class="lr">
+          <div class="left">
+            Height of the canvas
+          </div>
+          <div class="right">
+            <input id="ex-ht" type="number" value="240"/>
+          </div>
+        </div>
+        <div class="lr">
           <div class="left">
             Make Canvas Draggable
           </div>
           <div class="right">
-            <input id="exC-dr" type="number" />
+            <input id="ex-dr" type="checkbox" checked="yes"/>
           </div>
         </div>
-        <div id="exB-dro" class="lr">
+        <div class="lr">
           <div class="left">
-            If Canvas Draggable, resume rotation?
+            If Canvas Draggable, resume rotation after drag?
           </div>
           <div class="right">
-            <input id="exC-dro" type="number" />
+            <input id="ex-dro" type="checkbox" />
           </div>
         </div>
+        <div class="lr">
+          <div class="left">
+            Variable Name of the Zdog Illustration
+          </div>
+          <div class="right">
+            <input id="ex-iid" type="text" value="illo" />
+          </div>
+        </div>
+        <button style="width:100%;" onclick="exportJS()">
+          <h1>Export</h1>
+        </button>
       </div>
+      <div id="export-results-div">
+          <div class="boxHeader">
+            Results
+          </div>
+          Canvas<br />
+          <textarea id="export-re-canvas" rows="3"></textarea
+          ><br />
+          Zdog Script<br />
+          <textarea id="export-re-zdog" rows="2">
+&lt;script src="https://unpkg.com/zdog@1/dist/zdog.dist.min.js"&gt;&lt;/script&gt;</textarea
+          ><br />
+          <div id="zfont">
+            Zfont Script (Zdog Addon)<br />
+            <textarea id="export-re-zfont" rows="1">
+&lt;script src="https://cdn.jsdelivr.net/npm/zfont/dist/zfont.min.js"&gt;&lt;/script&gt;</textarea
+            >
+          </div>
+          <br />
+          ZdogHouse Script<br />
+          <textarea id="export-results" rows="20"></textarea
+          ><br />
+        </div>
     </div>
     <div id="ui-editor">
       <div id="header">
         <button type="button" id="title">Zdoghouse</button>
-        <div id="file">
-          <button class="headerButton" type="button">File</button>
-          <div id="file-content">
-            <button type="button" onclick="saveFile()">Save</button>
-          </div>
+        <div id="plugins">
+          Coming Soon!
         </div>
         <div id="demos">
           <button type="button">Demos</button>
@@ -118,14 +172,8 @@
           src="icons/elements/roundedrect.svg"
         />
         <img onclick="addElement('circle')" src="icons/elements/circle.svg" />
-        <img
-          onclick="addElement('ellipse')"
-          src="icons/elements/ellipse.svg"
-        />
-        <img
-          onclick="addElement('polygon')"
-          src="icons/elements/polygon.svg"
-        />
+        <img onclick="addElement('ellipse')" src="icons/elements/ellipse.svg" />
+        <img onclick="addElement('polygon')" src="icons/elements/polygon.svg" />
         <img onclick="addElement('line')" src="icons/elements/line.svg" />
         <img onclick="addElement('text')" src="icons/elements/text.svg" />
         <img onclick="addElement('shape')" src="icons/elements/shape.svg" />
@@ -532,6 +580,14 @@ closed: true/false
               <input type="color" value="#FFFFFF" id="sidebar-background" />
             </div>
           </div>
+          <div class="lr">
+            <div class="left">
+              Zoom
+            </div>
+            <div class="right">
+              <input type="text" id="sidebar-zoom" />
+            </div>
+          </div>
           <div class="boxHeader">Animation</div>
           <div class="boxHeader">Rotate by # every frame</div>
           <div class="lr">
@@ -563,6 +619,6 @@ closed: true/false
     </div>
     <script src="https://cdn.jsdelivr.net/npm/zfont/dist/zfont.min.js"></script>
     <script src="https://unpkg.com/zdog@1/dist/zdog.dist.min.js"></script>
-    <script src="zdoghouse/beta/3.js"></script>
+    <script src="zdoghouse/dev.js"></script>
   </body>
 </html>
