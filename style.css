@@ -47,7 +47,7 @@ button {
 .headerLink {
   color: blue;
 }
-#file {
+#plugins {
   border: none;
   padding: 5px 5px;
   text-align: center;
@@ -58,7 +58,7 @@ button {
   position: relative;
   display: inline-block;
 }
-#file-content {
+#plugin-content {
   display: none;
   position: absolute;
   width: 10vw;
@@ -67,7 +67,7 @@ button {
   z-index: 15;
   right: 0;
 }
-#file:hover #file-content {
+#plugins:hover #plugin-content {
   display: block;
 }
 #demos {
@@ -101,7 +101,6 @@ input {
 }
 textarea {
   width: 50%;
-  position: absolute;
 }
 .boxHeader {
   width: 100%;
@@ -149,24 +148,42 @@ textarea {
 }
 
 #export {
-  background: #0000;
+  background: #0005;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 101;
-  overflow-y: hidden;
+  width: 80vw;
+  height: 80vh;
+  z-index: 103;
+  overflow-y: scroll;
   overflow-x: hidden;
   visibility: hidden;
+  padding-top: 10vw;
+  padding-bottom: 20vw;
+  padding-left: 20vw;
+  padding-right: 20vw;
 }
 #export-div{
-  padding-top:20vh;
-  padding-bottom:20vh;
-  padding-left:20vw;
-  padding-right:20vw;
+  width: 60vw;
+  background: white;
+  overflow-x: hidden;
   overflow-y: scroll;
-  border: 1px solid black;
+}
+#export-results-div{
+  width: 60vw;
+  background: #FFF;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  visibility: hidden;
+}
+#zfont{
+  visibility: hidden;
+}
+#export-re-canvas,#export-re-zdog,#export-re-zfont,#export-results{
+  width: 60vw;
+  border: 0px;
+  margin: 0px;
+  background: #d3d3d3;
 }
 
 #elements {
