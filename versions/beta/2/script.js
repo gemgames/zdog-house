@@ -340,50 +340,50 @@ var debug = function(p) {
 var subModes = function(p) {
   if (mode.move) {
     doc.redIcon.src = dimension.red
-      ? "icons/" + style + "/redH.svg"
-      : "icons/" + style + "/red.svg";
+      ? "/zdog-house/icons/" + style + "/redH.svg"
+      : "/zdog-house/icons/" + style + "/red.svg";
     doc.greenIcon.src = dimension.green
-      ? "icons/" + style + "/greenH.svg"
-      : "icons/" + style + "/green.svg";
+      ? "/zdog-house/icons/" + style + "/greenH.svg"
+      : "/zdog-house/icons/" + style + "/green.svg";
     doc.blueIcon.src = dimension.blue
-      ? "icons/" + style + "/blueH.svg"
-      : "icons/" + style + "/blue.svg";
+      ? "/zdog-house/icons/" + style + "/blueH.svg"
+      : "/zdog-house/icons/" + style + "/blue.svg";
   }
   if (mode.rotate) {
     doc.redIcon.src = dimension.red
-      ? "icons/" + style + "/redRH.svg"
-      : "icons/" + style + "/redR.svg";
+      ? "/zdog-house/icons/" + style + "/redRH.svg"
+      : "/zdog-house/icons/" + style + "/redR.svg";
     doc.greenIcon.src = dimension.green
-      ? "icons/" + style + "/greenRH.svg"
-      : "icons/" + style + "/greenR.svg";
+      ? "/zdog-house/icons/" + style + "/greenRH.svg"
+      : "/zdog-house/icons/" + style + "/greenR.svg";
     doc.blueIcon.src = dimension.blue
-      ? "icons/" + style + "/blueRH.svg"
-      : "icons/" + style + "/blueR.svg";
+      ? "/zdog-house/icons/" + style + "/blueRH.svg"
+      : "/zdog-house/icons/" + style + "/blueR.svg";
   }
   if (mode.size) {
     doc.redIcon.src = dimension.red
-      ? "icons/" + style + "/heightH.svg"
-      : "icons/" + style + "/height.svg";
+      ? "/zdog-house/icons/" + style + "/heightH.svg"
+      : "/zdog-house/icons/" + style + "/height.svg";
     doc.greenIcon.src = dimension.green
-      ? "icons/" + style + "/depthH.svg"
-      : "icons/" + style + "/depth.svg";
+      ? "/zdog-house/icons/" + style + "/depthH.svg"
+      : "/zdog-house/icons/" + style + "/depth.svg";
     doc.blueIcon.src = dimension.blue
-      ? "icons/" + style + "/widthH.svg"
-      : "icons/" + style + "/width.svg";
+      ? "/zdog-house/icons/" + style + "/widthH.svg"
+      : "/zdog-house/icons/" + style + "/width.svg";
   }
 };
 var clickMode = function(p) {
   mode = { size: false, move: false, rotate: false };
   mode[p] = true;
   doc.moveIcon.src = mode.move
-    ? "icons/" + style + "/moveH.svg"
-    : "icons/" + style + "/move.svg";
+    ? "/zdog-house/icons/" + style + "/moveH.svg"
+    : "/zdog-house/icons/" + style + "/move.svg";
   doc.rotateIcon.src = mode.rotate
-    ? "icons/" + style + "/rotateH.svg"
-    : "icons/" + style + "/rotate.svg";
+    ? "/zdog-house/icons/" + style + "/rotateH.svg"
+    : "/zdog-house/icons/" + style + "/rotate.svg";
   doc.sizeIcon.src = mode.size
-    ? "icons/" + style + "/sizeH.svg"
-    : "icons/" + style + "/size.svg";
+    ? "/zdog-house/icons/" + style + "/sizeH.svg"
+    : "/zdog-house/icons/" + style + "/size.svg";
   subModes();
 };
 var click3D = function(p) {
@@ -722,18 +722,18 @@ var loadElements = function() {
     Cc =
       elements[i].type === "camera"
         ? ""
-        : '<div class="moreDropdown"><img class="moreIcon" src="icons/elements/more.svg">' +
+        : '<div class="moreDropdown"><img class="moreIcon" src="/zdog-house/icons/elements/more.svg">' +
           '<img class="more-content" onclick="duplicateElement(' +
           i +
-          ')"src="icons/file/duplicate.svg"><img class="more-content" onclick="deleteElement(' +
+          ')"src="/zdog-house/icons/file/duplicate.svg"><img class="more-content" onclick="deleteElement(' +
           i +
-          ')" src="icons/file/delete.svg"></div>';
+          ')" src="/zdog-house/icons/file/delete.svg"></div>';
     Aa = Aa.concat(
       '<div class="elementName" ' +
         Bb +
         ' onclick="loadElementData(' +
         i +
-        ')"><img src="icons/elements/' +
+        ')"><img src="/zdog-house/icons/elements/' +
         elements[i].type +
         '.svg">' +
         elements[i].name +
@@ -1078,36 +1078,36 @@ var updateStyle = function() {
     directionalCubeElement.frontFace = "#E62";
     directionalCubeElement.rearFace = "#E62";
   }
-  doc.gebi("edIRed").src = "icons/" + style + "/red.svg";
-  doc.gebi("edIGreen").src = "icons/" + style + "/green.svg";
-  doc.gebi("edIBlue").src = "icons/" + style + "/blue.svg";
-  doc.gebi("edIRedR").src = "icons/" + style + "/redR.svg";
-  doc.gebi("edIGreenR").src = "icons/" + style + "/greenR.svg";
-  doc.gebi("edIBlueR").src = "icons/" + style + "/blueR.svg";
-  doc.gebi("edIHeight").src = "icons/" + style + "/height.svg";
-  doc.gebi("edIDepth").src = "icons/" + style + "/depth.svg";
-  doc.gebi("edIWidth").src = "icons/" + style + "/width.svg";
-  doc.gebi("sidebar-RedR").src = "icons/" + style + "/redR.svg";
-  doc.gebi("sidebar-GreenR").src = "icons/" + style + "/greenR.svg";
-  doc.gebi("sidebar-BlueR").src = "icons/" + style + "/blueR.svg";
+  doc.gebi("edIRed").src = "/zdog-house/icons/" + style + "/red.svg";
+  doc.gebi("edIGreen").src = "/zdog-house/icons/" + style + "/green.svg";
+  doc.gebi("edIBlue").src = "/zdog-house/icons/" + style + "/blue.svg";
+  doc.gebi("edIRedR").src = "/zdog-house/icons/" + style + "/redR.svg";
+  doc.gebi("edIGreenR").src = "/zdog-house/icons/" + style + "/greenR.svg";
+  doc.gebi("edIBlueR").src = "/zdog-house/icons/" + style + "/blueR.svg";
+  doc.gebi("edIHeight").src = "/zdog-house/icons/" + style + "/height.svg";
+  doc.gebi("edIDepth").src = "/zdog-house/icons/" + style + "/depth.svg";
+  doc.gebi("edIWidth").src = "/zdog-house/icons/" + style + "/width.svg";
+  doc.gebi("sidebar-RedR").src = "/zdog-house/icons/" + style + "/redR.svg";
+  doc.gebi("sidebar-GreenR").src = "/zdog-house/icons/" + style + "/greenR.svg";
+  doc.gebi("sidebar-BlueR").src = "/zdog-house/icons/" + style + "/blueR.svg";
   doc.moveIcon.src = mode.move
-    ? "icons/" + style + "/moveH.svg"
-    : "icons/" + style + "/move.svg";
+    ? "/zdog-house/icons/" + style + "/moveH.svg"
+    : "/zdog-house/icons/" + style + "/move.svg";
   doc.rotateIcon.src = mode.rotate
-    ? "icons/" + style + "/rotate.svg"
-    : "icons/" + style + "/rotate.svg";
+    ? "/zdog-house/icons/" + style + "/rotate.svg"
+    : "/zdog-house/icons/" + style + "/rotate.svg";
   doc.sizeIcon.src = mode.size
-    ? "icons/" + style + "/sizeH.svg"
-    : "icons/" + style + "/size.svg";
+    ? "/zdog-house/icons/" + style + "/sizeH.svg"
+    : "/zdog-house/icons/" + style + "/size.svg";
   doc.redIcon.src = dimension.red
-    ? "icons/" + style + "/redH.svg"
-    : "icons/" + style + "/red.svg";
+    ? "/zdog-house/icons/" + style + "/redH.svg"
+    : "/zdog-house/icons/" + style + "/red.svg";
   doc.greenIcon.src = dimension.green
-    ? "icons/" + style + "/greenH.svg"
-    : "icons/" + style + "/green.svg";
+    ? "/zdog-house/icons/" + style + "/greenH.svg"
+    : "/zdog-house/icons/" + style + "/green.svg";
   doc.blueIcon.src = dimension.blue
-    ? "icons/" + style + "/blueH.svg"
-    : "icons/" + style + "/blue.svg";
+    ? "/zdog-house/icons/" + style + "/blueH.svg"
+    : "/zdog-house/icons/" + style + "/blue.svg";
 };
 
 //camera mode and controls
