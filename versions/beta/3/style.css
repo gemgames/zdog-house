@@ -1,0 +1,328 @@
+body {
+  overflow-y: hidden;
+  overflow-x: hidden;
+  scroll: top;
+}
+p,
+h1,
+div,
+h2,
+input {
+  font-family: "Lato", sans-serif;
+} /*Lato font*/
+p {
+  margin-block-start: 1px;
+  margin-block-end: 1px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+button {
+  background-color: #FFFFFF; /* Green */
+  border: none;
+  color: #C25;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: bold;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+} /*buttons*/
+#header {
+  width: 100vw;
+  height: 10vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+} /*header div*/
+#title {
+  font-size: 25px;
+  line-height: 0.5;
+  color: #EA0;
+  font-family: "Lato", sans-serif;
+} /*Title*/
+.headerButton {
+  padding: 15px 32px;
+  font-family: "Lato", sans-serif;
+} /*Header Button*/
+.headerLink {
+  color: blue;
+}
+#file {
+  border: none;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: bold;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+}
+#file-content {
+  display: none;
+  position: absolute;
+  width: 10vw;
+  border: 1px solid #EA0;
+  background-color: #FFFFFF;
+  z-index: 15;
+  right: 0;
+}
+#file:hover #file-content {
+  display: block;
+}
+#demos {
+  border: none;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: bold;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+}
+#demos-content {
+  display: none;
+  position: absolute;
+  width: 20vw;
+  border: 1px solid #EA0;
+  background-color: #FFFFFF;
+  z-index: 15;
+}
+#demos:hover #demos-content {
+  display: block;
+}
+
+/*div stuff*/
+input {
+  position: relative;
+  width: 92%;
+  font-size: 16px;
+}
+textarea {
+  width: 50%;
+  position: absolute;
+}
+.boxHeader {
+  width: 100%;
+  border: 1px solid black;
+  align: center;
+  line-height: 1;
+} /*Lato font*/
+.lr {
+  position: relative;
+  left: 0;
+  top: 0;
+  align: left;
+}
+.left {
+  border: 1px solid black;
+  width: 50%;
+  position: relative;
+  left: 0;
+  top: 0;
+  align: left;
+}
+.right {
+  border: 1px solid black;
+  width: 50%;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  align: right;
+}
+/*id div stuff*/
+#description {
+  width: 10vw;
+}
+
+#cover {
+  background: #0005;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+#export {
+  background: #0000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 101;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  visibility: hidden;
+}
+#export-div{
+  padding-top:20vh;
+  padding-bottom:20vh;
+  padding-left:20vw;
+  padding-right:20vw;
+  overflow-y: scroll;
+  border: 1px solid black;
+}
+
+#elements {
+  border: 1px solid black;
+  position: absolute;
+  top: 10vh;
+  left: 80vw;
+  width: 20vw;
+  height: 35vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+} /*elements div*/
+#addElements {
+  border: 1px solid black;
+  position: absolute;
+  top: 45vh;
+  left: 80vw;
+  width: 20vw;
+  height: 5vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+} /*add elements div*/
+#elementIcon {
+  vertical-align: baseline;
+} /*element icon*/
+
+#elementData {
+  border: 1px solid black;
+  position: absolute;
+  top: 50vh;
+  left: 80vw;
+  width: 20vw;
+  height: 50vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+} /*element data div*/
+.elementName {
+  background-color: #FFFFFF;
+  color: #000;
+  border: 1px solid black;
+  padding: 0px 0px;
+  font-size: 16px;
+}
+.element-name{
+  float:left;
+}
+#highlightedElement {
+  border: 1px solid #EA0;
+  border-left: 2px solid #EA0;
+  border-right: 2px solid #EA0;
+}
+.moreIcon {
+  position: relative;
+  right: 0;
+  top: 0;
+}
+.moreDropdown {
+  position: relative;
+  float: right;
+}
+.more-content {
+  position: relative;
+  display: none;
+  float: right;
+}
+.elementName:hover .more-content {
+  display: block;
+}
+.elementName:hover .moreIcon{
+  display: none;
+}
+div.elementName:hover span{
+  display: none;
+}
+#edcRed,
+#edcGreen,
+#edcBlue,
+#edcRedR,
+#edcGreenR,
+#edcBlueR,
+#edcWidth,
+#edcDepth,
+#edcHeight {
+  height: 40px;
+}
+#line-check-1,
+#line-check-2,
+#line-check-3,
+#line-check-4,
+#line-check-5,
+#line-check-6,
+#line-check-7,
+#line-check-8,
+#line-check-9 {
+  width: 20px;
+  height: 20px;
+  margin: 0px 0px;
+}
+
+#cameraDiv {
+  border: 1px solid black;
+  position: absolute;
+  z-index: 5;
+  top: 10vh;
+  left: 20vw;
+  width: 60vw;
+  height: 45vh;
+} /*camera div*/
+#camera {
+  width: 60vw;
+  height: 45vh;
+  z-index: 8;
+  position: relative;
+} /*camera canvas*/
+#cameraTools {
+  border: 1px solid black;
+  border-right: 0px;
+  position: absolute;
+  z-index: 10;
+  top: 10vh;
+  left: 20vw;
+  width: 41px;
+  height: 45vh;
+} /*camera tools div*/
+.cameraIcons {
+  z-index: 14;
+} /*icons for camera tools*/
+
+#finishedDiv {
+  border: 1px solid black;
+  position: absolute;
+  top: 55vh;
+  left: 20vw;
+  width: 60vw;
+  height: 45vh;
+} /*finished model div*/
+#finished {
+  width: 60vw;
+  height: 45vh;
+  z-index: 8;
+  position: relative;
+} /*finished model canvas*/
+
+#sidebar {
+  border: 1px solid black;
+  position: absolute;
+  top: 10vh;
+  left: 0;
+  width: 20vw;
+  height: 90vh;
+  overflow-x: hidden;
+} /*sidebar div*/
+#cube {
+  border: 1px solid black;
+  position: absolute;
+  top: 0vh;
+  right: 0vw;
+  z-index: 11;
+} /*cube canvas (top right of camera div)*/
