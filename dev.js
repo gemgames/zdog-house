@@ -1224,7 +1224,11 @@ var changeElementData = function() {
 };
 //export
 var exportMenu = function() {
+  if(doc.gebi("export").style.visibility==="hidden"){
   doc.gebi("export").style.visibility = "visible";
+  }else{
+  doc.gebi("export").style.visibility = "hidden";
+  }
 };
 var exportJS = function() {
   log("%cStarting Export", "font-weight: bold;");
