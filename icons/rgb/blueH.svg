@@ -8,7 +8,6 @@
     style="fill:white;stroke:black;"
   />
   <rect
-    id="moveIconH"
     x="1.5"
     y="1.5"
     rx="15"
