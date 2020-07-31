@@ -1,0 +1,24 @@
+<svg width="41" height="40"  xmlns="http://www.w3.org/2000/svg">
+  <rect
+    x="0"
+    y="0"
+    rx="15"
+    width="40"
+    height="40"
+    style="fill:white;stroke:black;"
+  />
+  <rect
+    x="1.5"
+    y="1.5"
+    rx="15"
+    width="37"
+    height="37"
+    style="fill:white;stroke:gold;stroke-width:3;"
+  />
+  <line x1="20" y1="32" x2="20" y2="08"   style="stroke:#000;stroke-width:3" />
+  <line x1="32" y1="20" x2="08" y2="20"   style="stroke:#000;stroke-width:3" />
+  <polygon points="20,04 16,12 24,12"  style="fill:#000;" />
+  <polygon points="20,36 16,28 24,28"  style="fill:#000;" />
+  <polygon points="04,20 12,16 12,24"  style="fill:#000;" />
+  <polygon points="36,20 28,16 28,24"  style="fill:#000;" />
+</svg>
