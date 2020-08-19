@@ -1,0 +1,42 @@
+{
+  "name": "zdog-house",
+  "version": "1.0",
+  "description": "Editor for the pseudo-3D engine Zdog",
+  "main": "index.html",
+  "files": [
+    "*",
+  ],
+  "dependencies": {
+    "zdog": "^1.1.1"
+    "zfont": {
+      git: {
+        url: "https://github.com/jaames/zfont.git"
+      }
+    },
+    "zhedra": {
+      git: {
+        url: "https://github.com/gemgames/zhedra.git"
+      }
+    },
+    "zdog2D": {
+      git: {
+        url: "https://github.com/gemgames/zdog2D.git"
+      }
+    }
+    "js-cookie": "^3.0.0"
+  },
+  "repository": {
+    "type": "page",
+  },
+  "keywords": [
+    "3D",
+    "canvas",
+    "svg",
+    "editor"
+  ],
+  "author": "Gem Games",
+  "bugs": {
+    "url": "https://github.com/gemgames/zdog-house/issues"
+  },
+  "homepage": "https://gemgames.github.io/zdog-house"
+}
