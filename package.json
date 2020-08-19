@@ -7,22 +7,22 @@
     "*",
   ],
   "dependencies": {
-    "zdog": "^1.1.1"
+    "zdog": "^1.1.1",
     "zfont": {
-      git: {
-        url: "https://github.com/jaames/zfont.git"
+      "git": {
+        "url": "https://github.com/jaames/zfont.git"
       }
     },
     "zhedra": {
-      git: {
-        url: "https://github.com/gemgames/zhedra.git"
+      "git": {
+        "url": "https://github.com/gemgames/zhedra.git"
       }
     },
     "zdog2D": {
-      git: {
-        url: "https://github.com/gemgames/zdog2D.git"
+      "git": {
+        "url": "https://github.com/gemgames/zdog2D.git"
       }
-    }
+    },
     "js-cookie": "^3.0.0"
   },
   "repository": {
