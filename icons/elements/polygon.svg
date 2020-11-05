@@ -1,16 +1,1 @@
-<svg id="polygonIcon" width="20" height="20"  xmlns="http://www.w3.org/2000/svg">
-  <rect
-    x="0"
-    y="0"
-    rx="8"
-    width="20"
-    height="20"
-    style="fill:white;stroke:black;"
-  />
-  <path
-    d="M10 3.5 L16 8 L13 14.5 L7 14.5 L4 8 Z"
-    stroke="#EA0"
-    stroke-width="2"
-    fill="#0000"
-  />
-</svg>
+<svg id="polygonIcon" width="20" height="20" xmlns="http://www.w3.org/2000/svg"> <rect x="0" y="0" rx="8" width="20" height="20" style="fill:white;stroke:black;" /> <path d="M10 3.5 L16 8 L13 14.5 L7 14.5 L4 8 Z" stroke="#EA0" stroke-width="2" fill="#0000" stroke-linecap="round" stroke-linejoin="round" /> </svg>
