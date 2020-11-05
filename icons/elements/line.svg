@@ -1,16 +1,1 @@
-<svg id="lineIcon" width="20" height="20"  xmlns="http://www.w3.org/2000/svg">
-  <rect
-    x="0"
-    y="0"
-    rx="8"
-    width="20"
-    height="20"
-    style="fill:white;stroke:black;"
-  />
-  <path
-    d="M6 6 L14 14"
-    stroke="#e62"
-    stroke-width="3"
-    fill="#0000"
-  />
-</svg>
+<svg id="lineIcon" width="20" height="20" xmlns="http://www.w3.org/2000/svg"> <rect x="0" y="0" rx="8" width="20" height="20" style="fill:white;stroke:black;" /> <path d="M6 6 L14 14" stroke="#e62" stroke-width="3" fill="#0000" stroke-linecap="round" stroke-linejoin="round" /> </svg>
