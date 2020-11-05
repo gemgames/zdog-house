@@ -1,0 +1,12 @@
+<svg width="21" height="20"  xmlns="http://www.w3.org/2000/svg">
+  <rect
+    x="0"
+    y="0"
+    rx="8"
+    width="20"
+    height="20"
+    style="fill:white;stroke:black;"
+  />
+  <path d="m 5 5 c 10 0 0 10 10 10" stroke="black" stroke-width="2" fill="none"/>
+  <ellipse cx="10" cy="15" rx="2" ry="2" style="fill:#F00;" />
+</svg>
