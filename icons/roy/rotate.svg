@@ -39,5 +39,5 @@
   <path d="M 20 8 q 13 3 11 20" stroke="#E62" stroke-width="2" fill="none" />
   <path d="M 10 26 q 10 5 20 0" stroke="#EA0" stroke-width="2" fill="none" />
   
-  <ellipse cx="20" cy="20" rx="4" ry="4" style="fill:black;" />
+  <ellipse cx="20" cy="20" rx="4" ry="4" style="fill:#534;" />
 </svg>
