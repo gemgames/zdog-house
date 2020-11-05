@@ -8,7 +8,7 @@
     style="fill:white;stroke:black;"
   />
   <path
-    d="M6 6 L14 6 L6 14 L14 14"
+    d="M6 6 L14 6 L6 14 L14 14 Z"
     stroke="#534"
     stroke-width="3"
     fill="#0000"
