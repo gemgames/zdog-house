@@ -19,7 +19,7 @@
   <line x1="20" y1="20" x2="20" y2="8"   style="stroke:#c25;stroke-width:2" />
   <line x1="20" y1="20" x2="10" y2="26"  style="stroke:#e622;stroke-width:2" />
   <line x1="20" y1="20" x2="30" y2="26"  style="stroke:#ea02;stroke-width:2" />
-  <ellipse cx="20" cy="20" rx="4" ry="4" style="fill:black;" />
+  <ellipse cx="20" cy="20" rx="4" ry="4" style="fill:#534;" />
   <polygon points="20,4 17,10 23,10"  style="fill:#c25;" />
   <polygon points="10,22 7,28 13,28"  style="fill:#e622;" />
   <polygon points="30,22 33,28 27,28" style="fill:#ea02;" />
