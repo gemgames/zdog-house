@@ -1,1 +1,16 @@
-<svg id="shapeIcon" width="20" height="20" xmlns="http://www.w3.org/2000/svg"> <rect x="0" y="0" rx="8" width="20" height="20" style="fill:white;stroke:black;" /> <path d="M6 6 L14 6 L6 14 L14 14 Z" stroke="#534" stroke-width="3" fill="#0000" /> </svg>
+<svg id="shapeIcon" width="20" height="20"  xmlns="http://www.w3.org/2000/svg">
+  <rect
+    x="0"
+    y="0"
+    rx="8"
+    width="20"
+    height="20"
+    style="fill:white;stroke:black;"
+  />
+  <path
+    d="M6 6 L14 6 L6 14 L14 14 Z"
+    stroke="#534"
+    stroke-width="3"
+    fill="#0000"
+  />
+</svg>
