@@ -1,0 +1,17 @@
+<svg id="bezierIcon" width="20" height="20"  xmlns="http://www.w3.org/2000/svg">
+  <rect
+    x="0"
+    y="0"
+    rx="8"
+    width="20"
+    height="20"
+    style="fill:white;stroke:black;"
+  />
+  <path
+    d="M5 5 Q15 5 15 15"
+    stroke="#C25"
+    stroke-width="3"
+    fill="#0000"
+    stroke-linecap="round" stroke-linejoin="round"
+  />
+</svg>
